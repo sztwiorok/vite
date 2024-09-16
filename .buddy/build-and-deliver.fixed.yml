@@ -13,6 +13,14 @@
     - "touch test.txt"
     - "echo \"mytest\" > test.txt"
     shell: "BASH"
+  - action: "Send notification"
+    type: "SLACK"
+    content: "[#$BUDDY_EXECUTION_ID] $BUDDY_PIPELINE_NAME execution by <$BUDDY_TRIGGERING_ACTOR_URL|$BUDDY_TRIGGERING_ACTOR>."
+    blocks: "[\n\t{\n\t\t\"type\": \"section\",\n\t\t\"fields\": [\n\t\t\t{\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Successful run:* <$BUDDY_EXECUTION_URL|Execution #$BUDDY_EXECUTION_ID $BUDDY_EXECUTION_COMMENT>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Pipeline:* <$BUDDY_PIPELINE_URL|$BUDDY_PIPELINE_NAME>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Ref:* $BUDDY_PIPELINE_REF_NAME\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Project:* <$BUDDY_PROJECT_URL|$BUDDY_PROJECT_NAME>\"\n\t\t\t}\n\t\t]\n\t}\n]"
+    channel: "C0GAG655H"
+    file_attachments:
+    - "/test.txt"
+    integration: "ANR8M7Vl4zbq6YE2dprOZqEgL3"
   - action: "cordova build"
     type: "NATIVE_BUILD_MAC_CORDOVA"
     disabled: true
