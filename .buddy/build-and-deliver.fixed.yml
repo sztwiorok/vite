@@ -21,6 +21,11 @@
     file_attachments:
     - "/test.txt"
     integration: "ANR8M7Vl4zbq6YE2dprOZqEgL3"
+  - action: "Wait for approval"
+    type: "WAIT_FOR_APPLY"
+    comment: "do you want to deploy to prod?"
+    permissions:
+      others: "DENIED"
   - action: "cordova build"
     type: "NATIVE_BUILD_MAC_CORDOVA"
     disabled: true
