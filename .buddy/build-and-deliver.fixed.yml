@@ -1,4 +1,4 @@
-- pipeline: "build and deliver"
+- pipeline: "Clinet1"
   events:
   - type: "PUSH"
     refs:
