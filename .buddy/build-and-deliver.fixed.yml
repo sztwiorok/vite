@@ -15,6 +15,7 @@
     shell: "BASH"
   - action: "cordova build"
     type: "NATIVE_BUILD_MAC_CORDOVA"
+    disabled: true
     commands:
     - "cordova build"
     shell: "BASH"
